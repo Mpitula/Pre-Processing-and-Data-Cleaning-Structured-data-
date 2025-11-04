@@ -32,3 +32,9 @@ if df['Age'].isnull().sum() > 0:
 if 'Cabin' in df.columns:
     df.drop('Cabin', axis=1, inplace=True)
     print("\nCabin column has been dropped from the dataset")
+
+## Remove duplicates
+df.drop_duplicates(inplace=True)
+
+# Confirm
+print("\nNumber of duplicates remaining:", df.duplicated().sum())
